@@ -5,7 +5,7 @@
 using namespace std;
 
 /*
-Go Down the Ladder
+Go Down the Ladder ( These guys are all different types of Employees, Employee should be parent class)
 create an Executive Class that has access to everything
 
 create a Manager Class that has access to limited things
