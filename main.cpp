@@ -4,6 +4,18 @@
 
 using namespace std;
 
+/*
+Go Down the Ladder
+create an Executive Class that has access to everything
+
+create a Manager Class that has access to limited things
+
+Employee Class created, limit things available to class
+
+create Salary, Bonuses, ability to change certain things
+
+*/
+
 int main() {
 
 	//3 Different Employees (Name, Job, Age, Phone Number, Email)
