@@ -27,7 +27,7 @@ int main() {
 	int choice;
 
 	//Dynamic Array
-	std::vector<Employee> listOfEmployees = { Herm,Corstma,Dimarna };
+	std::vector<Employee> listOfEmployees = { Herm,Corstma,Dimarna }; //This is Composition, put something similar in Employee.cpp
 
 	cout << "What is the Password?\n";
 	cin >> password;
