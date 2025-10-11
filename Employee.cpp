@@ -1,5 +1,7 @@
 #include "Employee.h"
 
+//_________________________________________________
+//Employee Class Functions
 void Employee::setName(string n)
 {
 	name = n;
@@ -59,5 +61,7 @@ Employee::Employee(string n, string j, int a, string p, string e)
 	job = j;
 	age = a;
 	phone = p;
-	email =e;
+	email = e;
 }
+
+
