@@ -13,16 +13,16 @@ private:
 	string email;
 
 public:
-	
+
 	void setName(string n);
 	string getName();
 
 	void setJob(string j);
 	string getJob();
-	
+
 	void setAge(int a);
 	int getAge();
-	
+
 	void setPhoneNumber(string p);
 	string getPhoneNumber();
 
@@ -30,5 +30,16 @@ public:
 	string getEmail();
 
 	Employee();
-	Employee(string n,string j,int a,string p,string e);
+	Employee(string n, string j, int a, string p, string e);
+};
+
+
+class Manager : public Employee 
+{
+
+};
+
+class Executive : public Employee 
+{
+	
 };
