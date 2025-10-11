@@ -6,14 +6,10 @@ using namespace std;
 
 /*
 Go Down the Ladder ( These guys are all different types of Employees, Employee should be parent class)
-create an Executive Class that has access to everything
-
-create a Manager Class that has access to limited things
-
-Employee Class created, limit things available to class
-
-create Salary, Bonuses, ability to change certain things
-
+-create an Executive Class that has variables that Employees and Managers don't
+-create a Manager Class that has variables that Employees and don't
+-Employee Class already created
+-create Salary variable and Bonuses (ability to change Job Position?)
 */
 
 int main() {
