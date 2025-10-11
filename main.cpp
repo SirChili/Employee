@@ -17,13 +17,6 @@ string numberFunction() {
 	srand(time(0));
 	int computerInput = rand() % 8 + 1;
 
-	string a;
-	string b;
-	string c;
-	string d;
-	string e;
-	string f;
-
 	string aChoice[9] = { "1","1","3","4","9","1","0","0","9" }; //1
 	string bChoice[9] = { "2","6","5","3","7","0","2","1","2" }; //2
 	string cChoice[9] = { "5","4","9","5","3","5","7","6","4" }; //3
@@ -31,17 +24,18 @@ string numberFunction() {
 	string eChoice[9] = { "3","2","1","6","1","4","6","7","8" }; //5
 	string fChoice[9] = { "9","9","4","0","5","3","8","1","2" }; //6
 
-	a = aChoice[computerInput];
-	b = bChoice[computerInput];
-	c = cChoice[computerInput];
-	d = dChoice[computerInput];
-	e = eChoice[computerInput];
-	f = fChoice[computerInput];
+	string a = aChoice[computerInput];
+	string b = bChoice[computerInput];
+	string c = cChoice[computerInput];
+	string d = dChoice[computerInput];
+	string e = eChoice[computerInput];
+	string f = fChoice[computerInput];
 
 	string p = a + b + c + d + e + f;
 
 	return p;
 }
+
 
 int main() {
 
