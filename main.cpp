@@ -4,87 +4,127 @@
 
 using namespace std;
 
-/*
-Go Down the Ladder ( These guys are all different types of Employees, Employee should be parent class)
--create an Executive Class that has variables that Employees and Managers don't
--create a Manager Class that has variables that Employees and don't
--Employee Class already created
--create Salary variable and Bonuses (ability to change Job Position?)
-*/
+//3 Different Employees (Name, Job, Age, Phone Number, Email)
+Employee Herm("Sherwynd Herm", "Data Analyst", 31, "153-760-6912", "Herm@letopejem.info",435.62);
+Employee Corstma("Brandie Corstma", "Data Analyst", 64, "427-236-6477", "Corstma@letopejem.com", 385.23);
+Employee Dimarna("Bayard Dimarna", "Software Engineer", 56, "644-204-4590", "Dimarna@letopejem.com", 464.63);
+Executive Boss("Mr. Bernard", "Executive", 76, "903-203-4192", "Exec@letopejem.com", 1632.41, "admin");
+Manager Laufey("Ms. Laufey", "Manager", 23, "210-223-4342", "Laufey@letopejem.com", 934.56, "Laufey");
+Manager David("Mr. David", "Manager", 26, "210-223-4342", "David@letopejem.com", 934.56, "David");
 
-//Password Randomizer
-string numberFunction() {
-	srand(time(0));
-	int computerInput = rand() % 8 + 1;
+//Dynamic Array
+vector<Employee> listOfEmployees = { Herm,Corstma,Dimarna, Boss,Laufey,David }; //This is Composition, put something similar in Employee.cpp
 
-	string aChoice[9] = { "1","1","3","4","9","1","0","0","9" }; //1
-	string bChoice[9] = { "2","6","5","3","7","0","2","1","2" }; //2
-	string cChoice[9] = { "5","4","9","5","3","5","7","6","4" }; //3
-	string dChoice[9] = { "8","5","6","8","2","8","4","3","3" }; //4
-	string eChoice[9] = { "3","2","1","6","1","4","6","7","8" }; //5
-	string fChoice[9] = { "9","9","4","0","5","3","8","1","2" }; //6
+void exec() {
 
-	string a = aChoice[computerInput];
-	string b = bChoice[computerInput];
-	string c = cChoice[computerInput];
-	string d = dChoice[computerInput];
-	string e = eChoice[computerInput];
-	string f = fChoice[computerInput];
+	int iChoice;
+	char cChoice;
 
-	string p = a + b + c + d + e + f;
+	system("cls");
 
-	return p;
+	cout << "Employee Information" << "\n";
+	cout << "1. " << listOfEmployees[0].getName() << "\n";
+	cout << "2. " << listOfEmployees[1].getName() << "\n";
+	cout << "3. " << listOfEmployees[2].getName() << "\n";
+	cout << "4. " << listOfEmployees[3].getName() << "\n";
+	cout << "5. " << listOfEmployees[4].getName() << "\n";
+	cout << "6. " << listOfEmployees[5].getName() << "\n";
+
+	cin >> iChoice;
+
+	system("cls");
+
+	if (iChoice > 4 || iChoice < 0) {
+
+		cout << "Employee Not Found";
+	}
+	else {
+		cout << "Name: " << listOfEmployees[iChoice - 1].getName() << "\n";
+		cout << "Job: " << listOfEmployees[iChoice - 1].getJob() << "\n";
+		cout << "Age: " << listOfEmployees[iChoice - 1].getAge() << "\n";
+		cout << "Phone: " << listOfEmployees[iChoice - 1].getPhoneNumber() << "\n";
+		cout << "Email: " << listOfEmployees[iChoice - 1].getEmail() << "\n";
+		cout << "Salary: " << listOfEmployees[iChoice - 1].getSalary() << "\n\n";
+
+		cout << "Want to change " << listOfEmployees[iChoice - 1].getName() << "'s salary? y/n\n";
+		cin >> cChoice;
+
+		if (cChoice == 'y') {
+			
+		}
+		else { cout << ""; }
+	}
 }
 
+void emp() {
+
+	int choice;
+	system("cls");
+
+	cout << "Employee Information" << "\n";
+	cout << "1. " << listOfEmployees[0].getName() << "\n";
+	cout << "2. " << listOfEmployees[1].getName() << "\n";
+	cout << "3. " << listOfEmployees[2].getName() << "\n";
+	cout << "4. " << listOfEmployees[3].getName() << "\n";
+	cout << "5. " << listOfEmployees[4].getName() << "\n";
+
+	cin >> choice;
+
+	system("cls");
+
+	if (choice > 4 || choice < 0) {
+
+		cout << "Employee Not Found";
+	}
+	if (choice > 3 && choice < 5) {
+		cout << "Permission Denied";
+	}
+	else {
+		cout << "Name: " << listOfEmployees[choice - 1].getName() << "\n";
+		cout << "Job: " << listOfEmployees[choice - 1].getJob() << "\n";
+		cout << "Age: " << listOfEmployees[choice - 1].getAge() << "\n";
+		cout << "Phone: " << listOfEmployees[choice - 1].getPhoneNumber() << "\n";
+		cout << "Email: " << listOfEmployees[choice - 1].getEmail() << "\n";
+		cout << "Salary: " << listOfEmployees[choice - 1].getSalary() << "\n";
+	}
+
+}
 
 int main() {
+	//std::vector<int> nums = { 1, 2, 3,4, 5 };
+	std::cout.imbue(std::locale("")); //don't know "how" it works, but ya know what it does!
 
-	//3 Different Employees (Name, Job, Age, Phone Number, Email)
-	Employee Herm("Sherwynd Herm", "Data Analyst", 31, "153-760-6912", "Herm@letopejem.info");
-	Employee Corstma("Brandie Corstma", "Data Analyst", 64, "427-236-6477", "Corstma@letopejem.com");
-	Employee Dimarna("Bayard Dimarna", "Software Engineer", 56, "644-204-4590", "Dimarna@letopejem.com");
+	//std::cout << 101'233'000'000 << "\n";
+	
+	//Manager m("person name", "some job", 12, "867-5309", "email.com", 123'456.99, "abcde"); //abcde is pasword
+	//std::vector<Manager> managers = 
+	//{
+	//	Manager(
+	//}
 
-	//Dynamic Array
-	vector<Employee> listOfEmployees = { Herm,Corstma,Dimarna }; //This is Composition, put something similar in Employee.cpp
+	//Employee e; 
+	//e.age;
 
-	string password = numberFunction();
+
+	string managerPass[2] = {Laufey.getManPass(),David.getManPass()};
+	string password = "123456";
 	string userInput;
-
-	//Delete this before running, see if you can guess the password >:D
-	cout << password << "\n";
 
 	cout << "What is the Password?\n";
 	cin >> userInput;
 
-	if (userInput == password || userInput == "Admin") {
-		
-		int choice;
-		system("cls");
+	if (userInput == password) {
+		emp();
+	}
+	else if (userInput == Boss.getExecPass()) {
+		exec();
+	}
+	if (userInput == managerPass[0] || userInput == managerPass[1]) {
 
-		cout << "Employee Information" << "\n";
-		cout << "1. " << listOfEmployees[0].getName() << "\n";
-		cout << "2. " << listOfEmployees[1].getName() << "\n";
-		cout << "3. " << listOfEmployees[2].getName() << "\n";
-
-		cin >> choice;
-
-		system("cls");
-
-		if (choice > 3 || choice < 0) {
-
-			cout << "Employee Not Found";
-			return -1;
-
-		}
-		else {
-			cout << "Name: " << listOfEmployees[choice - 1].getName() << "\n";
-			cout << "Job: " << listOfEmployees[choice - 1].getJob() << "\n";
-			cout << "Age: " << listOfEmployees[choice - 1].getAge() << "\n";
-			cout << "Phone: " << listOfEmployees[choice - 1].getPhoneNumber() << "\n";
-			cout << "Email: " << listOfEmployees[choice - 1].getEmail() << "\n";
-		}
+		std::cout << "welcome manager\n";
 	}
 	else {
 		cout << "Incorrect\n";
 	}
+	
 }
