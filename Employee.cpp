@@ -52,16 +52,79 @@ string Employee::getEmail()
 	return email;
 }
 
+void Employee::setSalary(double s)
+{
+	salary = s;
+}
+
+double Employee::getSalary()
+{
+	return salary;
+}
+
 //Takes away the warning
 Employee::Employee() = default;
 
-Employee::Employee(string n, string j, int a, string p, string e)
+Employee::Employee(string n, string j, int a, string p, string e, double s)
 {
 	name = n;
 	job = j;
 	age = a;
 	phone = p;
 	email = e;
+	salary = s;
+}
+//Executive Functions
+//____________________________________________________________________________________
+
+void Executive::setExecPass(string pass)
+{
+	execPass = pass;
+}
+
+string Executive::getExecPass()
+{
+	return execPass;
+}
+
+Executive::Executive() = default;
+
+Executive::Executive(string n, string j, int a, string p, string e,double s, string pass)
+{
+	name = n;
+
+	//Employee::setName(n); //anther way of doing it (if name is private) 
+	
+	job = j;
+	age = a;
+	phone = p;
+	email = e;
+	salary = s;
+	execPass = pass;
+}
+//Manager Functions
+//____________________________________________________________________________________
+void Manager::setManPass(string pass)
+{
+	manPass = pass;
+}
+
+string Manager::getManPass()
+{
+	return manPass;
+}
+
+Manager::Manager() = default;
+
+Manager::Manager(string n, string j, int a, string p, string e, double s, string pass)
+{
+	name = n;
+	job = j;
+	age = a;
+	phone = p;
+	email = e;
+	salary = s;
+	manPass = pass;
 }
 
 
